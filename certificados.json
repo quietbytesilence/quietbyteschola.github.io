@@ -1,0 +1,16 @@
+{
+  "certificados": [
+    {
+      "codigo": "QBS-2025-0001",
+      "nome": "Cristiane Rebelo Carneiro",
+      "curso": "Introdução à Computação",
+      "data_emissao": "2024-12-20"
+    },
+    {
+      "codigo": "QBS-2025-0002",
+      "nome": "Carlos Eduardo Mendes",
+      "curso": "Fundamentos de Redes de Computadores",
+      "data_emissao": "2025-10-01"
+    }
+  ]
+}
