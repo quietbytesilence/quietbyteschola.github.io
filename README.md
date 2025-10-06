@@ -19,7 +19,7 @@ Este site é parte do projeto educacional criado por **Gustavo**, estudante da U
 Os certificados são verificados localmente através de um arquivo JSON, garantindo transparência e simplicidade.
   
 Para validar um certificado:
-1. Acesse [quietbytesilence.github.io/validar.html](https://quietbytesilence.github.io/validar.html)
+1. Acesse [quietbytesilence.github.io/validar.html](https://github.com/quietbytesilence/quietbyteschola.github.io/blob/main/validar.html)
 2. Insira o código exibido no seu certificado.
 3. O sistema indicará se ele é **válido** ou **inválido**.
 
