@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Validar Certificado | Quiet Byte Silence</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Quiet Byte Silence</h1>
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="sobre.html">Sobre Mim</a>
+      <a href="validar.html" class="ativo">Validar Certificado</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="validador">
+      <h2>Validar Certificado</h2>
+      <p>Digite o código do seu certificado abaixo:</p>
+
+      <input type="text" id="codigo" placeholder="Ex: QBS-2025-0001" />
+      <button onclick="validarCertificado()">Validar</button>
+
+      <div id="resultado"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Quiet Byte Silence</p>
+  </footer>
+
+  <script>
+    async function validarCertificado() {
+      const codigo = document.getElementById("codigo").value.trim();
+      const resultado = document.getElementById("resultado");
+
+      if (!codigo) {
+        resultado.textContent = "Por favor, insira um código.";
+        resultado.className = "erro";
+        return;
+      }
+
+      try {
+        const resposta = await fetch("certificados.json");
+        const data = await resposta.json();
+
+        const valido = data.certificados.find(c => c.codigo === codigo);
+
+        if (valido) {
+          resultado.textContent = `✅ Certificado válido! Emitido para: ${valido.nome}`;
+          resultado.className = "sucesso";
+        } else {
+          resultado.textContent = "❌ Código inválido ou certificado não encontrado.";
+          resultado.className = "erro";
+        }
+      } catch (e) {
+        resultado.textContent = "Erro ao carregar os dados de validação.";
+        resultado.className = "erro";
+      }
+    }
+  </script>
+</body>
+</html>
